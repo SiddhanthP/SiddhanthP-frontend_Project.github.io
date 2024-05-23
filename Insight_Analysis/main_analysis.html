@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>ANALYSIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script3.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggler = document.getElementById('toggler');
+            const menu = document.querySelector('.menu');
+    
+            document.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is outside the menu
+                if (toggler.checked && !menu.contains(event.target) && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+    
+            // Add an additional click event listener for clicks inside the menu
+            menu.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is inside the menu
+                if (toggler.checked && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+        });
+    </script>
+    <style>
+        
+         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+ 
+       
+        *,
+        *:before,
+        *:after {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+        }
+        
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    height: 100vh;
+    display: grid;
+    place-items: center center;
+    font-family: 'Poppins',sans-serif;
+    padding-top: 150px;
+}
+
+.navbar {
+    position: fixed;
+    margin: auto;
+    background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2013/12/shutterstock_112250879-double-helix-dna.jpg);
+    top: 0;
+    width: 100%;
+    background-color:whitesmoke;
+    padding: 15px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover; 
+}
+.navbar a {
+    text-decoration: none;
+    color: black;
+    }
+
+.navbar img{
+    float:left;
+    padding-left: 10px;
+    width:max-content;
+    height: 80px;
+}
+
+.navbar-columns {
+    display: flex;
+    list-style: none;   
+    gap: 10px;
+}
+
+.navbar-column {
+    margin: 0 20px;
+    text-decoration: none;
+    color:black;
+    font-weight:bold;
+    font-size:16px;
+    transition: color 0.6s ease;
+    
+}
+#toggler, label{
+    display: none;
+    }
+
+    label i{
+    color:black;
+    align-items: right;
+    padding-right: 30px ;
+    }
+    @media screen and (max-width:864px)
+    {
+            .menu {
+            width: 100%;
+            max-height: 0;
+            height: 100vh; /* Set the height to the full height of the viewport */
+            overflow: hidden;
+            line-height: 40px;
+            background-color: rgba(173, 216, 230, 0.9); /* Set a transparent background color */
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 999; /* Set a higher z-index to appear above other elements */
+            }
+            
+            .menu a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            color: black;
+            font-size: 16px;
+            transition: background-color 0.6s ease;
+            }
+            
+            .menu a:hover {
+            background-color: #999;
+            }
+            
+            #toggler:checked~.menu {
+            max-height: 100%;
+            }
+    
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ebf3f8;
+            min-width: max-content;
+            border-radius: 5px;
+            z-index: 1;
+            top: 0;
+            left: 100%; /* Position the dropdown content to the right of the dropdown button */
+            }
+    
+            .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #7a8775;
+            }
+            
+            label{
+            display: inline-flex;
+            cursor: pointer;
+            }
+    
+            #toggler:checked~.menu{
+            max-height: 100%;
+            }
+    
+            .navbar-columns{
+            flex-direction: column;
+            align-items:center;
+            padding:30px;
+            }
+    }
+    
+.navbar-column:hover {
+    color:orangered; 
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer ;
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#ebf3f8; /* Same color as the button */
+    min-width: max-content;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    font-size: 90%;
+    color: black;
+    height:50px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #999;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #7a8775;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-columns {
+        font-size: small;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    .footer-column {
+        flex: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+        text-align: center;
+    }
+   
+}
+
+.footer {
+
+        background-color:#333;
+        color:whitesmoke;
+        padding: 20px 50px;
+        width: 100%;
+        font-weight:400;
+        font-size:small;
+
+    }
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-column {
+        flex: 1;
+    }
+
+    .footer-column p {
+        margin: 1;
+    }
+
+    .social-icons {
+        font-size: 30px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        text-decoration:solid;
+        margin-right: 20px;
+    }
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    padding: 20px;
+    grid-gap: 40px;
+}
+.card{
+    background-color: #E5E3E2;
+    border:solid #7a8775;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.18);
+    transition: all 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.container{
+    position: relative;
+    clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+}
+
+.container img{
+    padding-top: 10px;
+    width:100%;
+    height: 250px;
+    display: block;
+}
+.container:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+}
+.card1>.container:after{
+    background-image: linear-gradient(
+        135deg,
+        
+    );
+}
+.card2>.container:after{
+    background-image: linear-gradient(
+        135deg,
+    );
+}
+.card3>.container:after{
+    background-image: linear-gradient(
+        135deg,
+    );
+}
+.card4>.container:after{
+    background-image: linear-gradient(
+        135deg,
+    );
+}
+.card5>.container:after{
+    background-image: linear-gradient(
+        135deg,
+    );
+}
+.details{
+    padding: 20px 10px;
+}
+.details>h3{
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 15px 0;
+}
+.details>p{
+    color: #151320;
+    font-size:14px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 376px) {
+
+    .navbar{
+        width: 560px;
+    }
+    .navbar img{
+        padding-left: 125px;
+    }
+
+} 
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+            <img src="bioCOS-removebg-preview.png" alt="Logo">
+      <label for="toggler">
+          <i class="fa fa-bars"></i>
+      </label>
+  <input type="checkbox" id="toggler" name="">
+  <div class="menu">    
+      <div class="navbar-columns">
+          <a href="../bioCOS HOME/index.html" class="navbar-column">HOME</a>
+          <div class="dropdown"><strong><a href="../Insight_Analysis/main_analysis.html" style="text-decoration:none; color:black;" class="navbar-column" >ANALYSIS</a></strong>
+          <div class="dropdown-content">
+              <a href="../Insight_Analysis/d.html">DNA Analysis</a>
+              <a href="../Insight_Analysis/r.html">RNA Analysis</a>
+              <a href="../Insight_Analysis/scr.html">Single-Cell Analysis</a>
+              <a href="../Insight_Analysis/epig.html">Epigenomic Analysis</a>
+              <a href="../Insight_Analysis/p_m.html">Proteomic Analysis</a>
+          </div></div>
+
+          <div class="dropdown"><strong><a href="../R&D 2nd file/research.html" style="text-decoration:none; color:black;" class="navbar-column" >RESEARCH</a></strong>
+              <div class="dropdown-content">
+                  <a href="../R&D 2nd file/research_cancer1.html">CANCER</a>
+                  <a href="../R&D 2nd file/research_genetics1.html">GENETICS</a>
+                  <a href="../R&D 2nd file/research_nervous1.html">NERVOUS SYSTEM</a>
+                  <a href="../R&D 2nd file/research_microbiology1.html">MICROBIOLOGY</a>
+                  <a href="../R&D 2nd file/research_immunology1.html">IMMUNOLOGY</a>
+                  <a href="../R&D 2nd file/research_drug1.html">DRUG DEVELOPMENT</a>
+              </div></div>
+          <a href="../reference page/index_final.html" class="navbar-column">REFERENCES</a>
+          <a href="../aboutusnew/aboutus2.html" class="navbar-column">ABOUT US</a>
+      </div>
+  </div>
+</div>
+<h2>Scientific Research Center</h2>
+        <p style="color:#151320 ;">Your Source for Cutting-Edge Research</p>
+    <div class="cards">
+        <div class="card card1">
+            <div class="container">
+                <img src="https://i.haberglobal.com.tr/storage/files/images/2023/05/11/dna-haritasi-guncellendi-bundan-boyle-daha-fazla-insan-grubunu-kapsayacak-XSko.jpg" alt="DNA Sequencing Data Analysis">
+            </div>
+            <div class="details">
+                <h3>DNA Sequencing Data Analysis</h3>
+                <p>DNA-SEQUENCING comes in many forms. Whole-genome sequencing (WGS), whole-exome sequencing (WES) and targeted sequencing enable studying heritable and somatic DNA variants.Metagenomic whole-genome sequencing of microbial communities allows analyzing their compositions and functions.</p>
+                <a href="d.html"><i><u><b>MORE INFO</u></i></b></a>
+            </div>
+        </div>
+        <div class="card card2">
+            <div class="container">
+                <img src="https://www.statnews.com/wp-content/uploads/2022/10/AdobeStock_532133575-645x645.jpeg" alt="RNA Sequencing Data Analysis">
+            </div>
+            <div class="details">
+                <h3>RNA Sequencing Data Analysis</h3>
+                <p>The protocol of RNA-seq starts with the conversion of RNA, either total, enriched for mRNA, or depleted of rRNA, into cDNA. After fragmentation, adapter ligation, and index ligation, each cDNA fragment is subsequently sequenced or “read" using a high-throughput platform. </p>
+                <a href="r.html"><i><u><b>MORE INFO</u></i></b></a>
+            </div>
+        </div>
+        <div class="card card3">
+            <div class="container">
+                <img src="https://miro.medium.com/v2/resize:fit:774/1*mvVTgMcSwVQ7QzNA_Z8vDg.png" alt="Single-Cell RNA Sequencing Data Analysis">
+            </div>
+            <div class="details">
+                <h3>Single-Cell RNA Sequencing Data Analysis</h3>
+                <p>Here we present typical single-cell analyses, focusing on scRNA-seq but covering also its integration with other common single-cell assays. We also list single-cell papers that we have published.</p>
+                <a href="scr.html"><i><u><b>MORE INFO</u></i></b></a>
+            </div>
+        </div>
+        <div class="card card4">
+            <div class="container">
+                <img src="https://www.embl.org/news/wp-content/uploads/2020/06/EMBL_Rome_Press_1000x600.jpg" alt="Epigenomic Data Analysis">
+            </div>
+            <div class="details">
+                <h3>Epigenomic Data Analysis</h3>
+                <p>Epigenomics characterizes the chromatin state down to minuscule chemical modifications. Epigenetic changes to the DNA and associated proteins affect gene expression and may lead to altered cellular states, including diseases. </p>
+                <a href="epig.html"><i><u><b>MORE INFO</u></i></b></a>
+            </div>
+        </div>
+        <div class="card card5">
+            <div class="container">
+                <img src="https://assets.technologynetworks.com/production/dynamic/images/content/349697/european-proteomics-infrastructure-consortium-providing-access-349697-640x360.jpg" alt="Proteomic & Metabolomic Data Analysis">
+            </div>
+            <div class="details">
+                <h3>Proteomic & Metabolomic Data Analysis</h3>
+                <p>Proteins and metabolites are typically identified and quantified by the means of mass-spectrometry. Other methods, relying on antibodies or nuclear magnetic resonance provide lower-throughput or less quantitative data, often with lower costs compared to MS. </p>
+                <a href="p_m.html"><i><u><b>MORE INFO</u></i></b></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <p>BioCOS LIFE SCIENCES</p>
+                <p>Bengaluru Area, India</p>
+            </div>
+            <div class="footer-column social-icons">
+                <a href="https://www.researchgate.net/profile/Sanjeev-Kumar-215"><i class="fab fa-researchgate"></i></a>
+                <a href="https://www.linkedin.com/company/biocos-life-sciences/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.contractresearchmap.com/providers/biocos-life-sciences"><i class="fab fa-connectdevelop"></i></a>
+            </div>
+            <div class="footer-column">
+                <p>&copy; 2008 BioCOS LIFE SCIENCES</p>
+                <p>Contact Us: biocos@biocosls.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

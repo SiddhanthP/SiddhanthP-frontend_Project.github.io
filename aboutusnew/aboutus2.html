@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About US </title>
+    <link rel="stylesheet" type="text/css" href="Bio style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+</head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const toggler = document.getElementById('toggler');
+      const menu = document.querySelector('.menu');
+
+      document.addEventListener('click', function (event) {
+          // Check if the toggler is checked and the click is outside the menu
+          if (toggler.checked && !menu.contains(event.target) && event.target !== toggler) {
+              toggler.checked = false; // Uncheck the toggler to close the menu
+          }
+      });
+
+      // Add an additional click event listener for clicks inside the menu
+      menu.addEventListener('click', function (event) {
+          // Check if the toggler is checked and the click is inside the menu
+          if (toggler.checked && event.target !== toggler) {
+              toggler.checked = false; // Uncheck the toggler to close the menu
+          }
+      });
+  });
+</script>
+<body>
+    <div class="navbar">
+        <img src="bioCOS-removebg-preview.png" alt="Logo">
+      <label for="toggler">
+          <i class="fa fa-bars"></i>
+      </label>
+  <input type="checkbox" id="toggler" name="">
+  <div class="menu">    
+      <div class="navbar-columns">
+          <a href="../bioCOS HOME/index.html" class="navbar-column">HOME</a>
+          <div class="dropdown"><strong><a href="../Insight_Analysis/main_analysis.html" style="text-decoration:none; color:black;" class="navbar-column" >ANALYSIS</a></strong>
+          <div class="dropdown-content">
+              <a href="../Insight_Analysis/d.html">DNA Analysis</a>
+              <a href="../Insight_Analysis/r.html">RNA Analysis</a>
+              <a href="../Insight_Analysis/scr.html">Single-Cell Analysis</a>
+              <a href="../Insight_Analysis/epig.html">Epigenomic Analysis</a>
+              <a href="../Insight_Analysis/p_m.html">Proteomic Analysis</a>
+          </div></div>
+
+          <div class="dropdown"><strong><a href="../R&D 2nd file/research.html" style="text-decoration:none; color:black;" class="navbar-column" >RESEARCH</a></strong>
+              <div class="dropdown-content">
+                  <a href="../R&D 2nd file/research_cancer1.html">CANCER</a>
+                  <a href="../R&D 2nd file/research_genetics1.html">GENETICS</a>
+                  <a href="../R&D 2nd file/research_nervous1.html">NERVOUS SYSTEM</a>
+                  <a href="../R&D 2nd file/research_microbiology1.html">MICROBIOLOGY</a>
+                  <a href="../R&D 2nd file/research_immunology1.html">IMMUNOLOGY</a>
+                  <a href="../R&D 2nd file/research_drug1.html">DRUG DEVELOPMENT</a>
+              </div></div>
+          <a href="../reference page/index_final.html" class="navbar-column">REFERENCES</a>
+          <a href="./aboutus2.html" class="navbar-column">ABOUT US</a>
+      </div>
+  </div>
+</div>
+<br><br><br>
+    <section class="home" id="home">
+      <div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container bottomContainer">
+          <div class="allText bottomText">
+            <p class="text-blk headingText">
+              About
+            </p>
+            <p class="text-blk subHeadingText">
+             BioCOS Life Sciences
+            </p>
+            <p class="text-blk description">
+              BioCOS Life Sciences private limited company registered under Ministry of Corporate Affairs (MCA) India and head office at Bangalore, India. From start itself BioCOS has been recognized for its R&D potential in the field of computational Life Sciences and could forge collaborations in various R&D areas of Life and Biomedical Sciences with prominent scientists and research institutions such as university Lyon France, ACTREC Mumbai, Indian Institute of Science (IISc) Bangalore, Jawaherlal Neharu Center for Advanced Scientific Research (JNCASR) Bangalore, National Institute of Immunology (NII) New Delhi to mention few.Over the past few years, BioCOS has applied its scientists and engineers’ multi disciplinary strengths in computational research in the areas like Systems Biology, Network Biology, Next generation Sequencing, early biomarker detection, algorithms for imaging and cardiovascular disease monitoring for hand held devices. </p>
+          </div>
+          <div class="videoContainer">
+            <div class="home-img"><img src="biocoslogo.jpeg" alt="Biocos logo"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="about-img">
+          <img src="biocos ceo.jpg" alt="">
+      </div>
+      <div class="about-content">
+          <h2 class="heading">About <span> CEO </span></h2>
+          <h3>Mr. Sanjeev Kumar</h3>
+          <p>The person, Mr. Sanjeev Kumar, is the Chief Executive Officer of BioCOS Life Sciences, a position he has held since January 2008, accumulating over 15 years of experience in this role. His expertise lies in the intersection of Machine Learning, Mathematics, and Life Sciences, showcasing a unique blend of skills across these diverse disciplines.</p>
+      </div>
+  </section>
+    <section class="Contact" id="Contact">
+    
+        <div class="section-header">
+          <div class="container">
+            <h2>CONTACT US</h2>
+            </div>
+        </div>
+        
+        <div class="container">
+          <div class="row">
+            
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                
+                <div class="contact-info-content">
+                  <h4>Address</h4>
+                  <p>2810, Kengeri Sattelite Town,<br/>Oppo. Namoora Tindi, Nagarbhavi <br/>BENGALURU</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                
+                <div class="contact-info-content">
+                  <h4>Phone</h4>
+                  <p>98444 32304</p>
+                </div>
+              </div>
+              <br>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="contact-info-content">
+                  <h4>Email</h4>
+                 <p>abcdefg@gmail.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-form">
+              <form action="" id="contact-form">
+                <h2>Send Message</h2>
+                <div class="input-box">
+                  <input type="text" required="true" name="">
+                  <span>Full Name</span>
+                </div>
+                
+                <div class="input-box">
+                  <input type="email" required="true" name="">
+                  <span>Email</span>
+                </div>
+                
+                <div class="input-box">
+                  <textarea required="true" name=""></textarea>
+                  <span>Type your Message...</span>
+                </div>
+                
+                <div class="input-box">
+                  <input type="submit" value="Send" name="">
+                </div>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+  
+    
+    <section class="services" id="services">
+        <h2 class="heading" ><span>Solutions Offered</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-dna' ></i>
+                <h3>Sequencing</h3>
+                <p>Sequencing DNA means determining the order of the four chemical building blocks - called "bases" - that make up the DNA molecule. The sequence tells scientists the kind of genetic information that is carried in a particular DNA segment.
+                </p>
+                <a href="sequencing.html" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-filter-alt' ></i>
+                <h3>Genotyping</h3>
+                <p>Genotyping is the process of determining the DNA sequence, called a genotype, at positions within the genome of an individual. Sequence variations can be used as markers in linkage and association studies to determine genes relevant to specific traits.
+                </p>
+                <a href="genotyping.html" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxs-tree-alt' ></i>
+                <h3>Microarray</h3>
+                <p>A microarray is a laboratory tool used to detect the expression of thousands of genes at the same time. DNA microarrays are microscope slides that are printed with thousands of tiny spots in defined positions, with each spot containing a known DNA sequence or gene.
+                </p>
+                <a href="microarray.html" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxl-mongodb' ></i>
+                <h3>Bioinformatics</h3>
+                <p>a hybrid science that links biological data with techniques for information storage, distribution, and analysis to support multiple areas of scientific research, including biomedicine.
+                    Bioinformatics focuses its scope on the areas of 3D image processing and many more.
+                </p>
+                <a href="bioinformatics.html" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/scrollreveal"></script>
+   
+    <div class="footer">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <p>BioCOS LIFE SCIENCES</p>
+                <p>Bengaluru Area, India</p>
+            </div>
+            <div class="footer-column social-icons">
+                <a href="https://www.researchgate.net/profile/Sanjeev-Kumar-215"><i class="fab fa-researchgate"></i></a>
+                <a href="https://www.linkedin.com/company/biocos-life-sciences/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.contractresearchmap.com/providers/biocos-life-sciences"><i class="fab fa-connectdevelop"></i></a>
+            </div>
+            <div class="footer-column">
+                <p>&copy; 2008 BioCOS LIFE SCIENCES</p>
+                <p>Contact Us: biocos@biocosls.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

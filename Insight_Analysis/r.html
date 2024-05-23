@@ -1,0 +1,589 @@
+
+<html>
+<head>
+    <title>RNA Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggler = document.getElementById('toggler');
+            const menu = document.querySelector('.menu');
+    
+            document.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is outside the menu
+                if (toggler.checked && !menu.contains(event.target) && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+    
+            // Add an additional click event listener for clicks inside the menu
+            menu.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is inside the menu
+                if (toggler.checked && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+        });
+    </script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+    .navbar {
+        position: fixed;
+        background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2013/12/shutterstock_112250879-double-helix-dna.jpg);
+        top: 0;
+        width: 100%;
+        background-color:whitesmoke;
+        padding: 15px 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-size: cover; 
+    }
+    .navbar a {
+        text-decoration: none;
+        color: black	;
+        }
+    
+    .navbar img{
+        float:left;
+        padding-left: 10px;
+        width:max-content;
+        height: 80px;
+    }
+    
+    .navbar-columns {
+        display: flex;
+        list-style: none;   
+        gap: 10px;
+       
+    }
+    
+    .navbar-column {
+        margin: 0 20px;
+        text-decoration: none;
+        color:black;
+        font-weight:bold;
+        transition: color 0.6s ease;
+        font-size:16px;
+    }
+    #toggler, label{
+        display: none;
+        }
+    
+        label i{
+        color:black;
+        align-items: right;
+        padding-right: 30px ;
+        }
+        @media screen and (max-width:864px)
+    {
+            .menu {
+            width: 100%;
+            max-height: 0;
+            height: 100vh; /* Set the height to the full height of the viewport */
+            overflow: hidden;
+            line-height: 40px;
+            background-color: rgba(173, 216, 230, 0.9); /* Set a transparent background color */
+            position: fixed;
+            top: 0;
+            left: 0;    
+            z-index: 999; /* Set a higher z-index to appear above other elements */
+            }
+            
+            .menu a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            color: black;
+            font-size: 16px;
+            transition: background-color 0.6s ease;
+            }
+            
+            .menu a:hover {
+            background-color: #999;
+            }
+            
+            #toggler:checked~.menu {
+            max-height: 100%;
+            }
+    
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ebf3f8;
+            min-width: max-content;
+            border-radius: 5px;
+            z-index: 1;
+            top: 0;
+            left: 100%; /* Position the dropdown content to the right of the dropdown button */
+            }
+    
+            .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #7a8775;
+            }
+            
+            label{
+            display: inline-flex;
+            cursor: pointer;
+            }
+    
+            #toggler:checked~.menu{
+            max-height: 100%;
+            }
+    
+            .navbar-columns{
+            flex-direction: column;
+            align-items:center;
+            padding:30px;
+            }
+    }
+    
+.navbar-column:hover {
+    color:orangered; 
+}
+    .navbar-column:hover {
+        color:orangered; 
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        border-radius: 5px;
+        cursor: pointer ;
+        position: relative;
+      }
+    
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:#ebf3f8; /* Same color as the button */
+        min-width: max-content;
+        text-decoration: none;
+        border-radius: 5px;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        font-size: 90%;
+        color: black;
+        height:50px;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #999;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: #7a8775;
+      }
+
+    .container {
+        color: #151320;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        
+        }
+        img {
+    max-width: 400px;
+    height:220px;
+    float: right;
+    display: block;
+    border-radius: 20px 20px 0 0;
+  }
+
+  p {
+            font-size: 12pt;
+        }
+        body {
+            background-color:white ;
+            font-family:'Poppins',sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        header {
+            background-color:white;
+            color:black;
+            padding: 20px;
+            text-align: center;
+        }
+        @media screen and (max-width: 768px) {
+            .footer-columns {
+                font-size: small;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        
+            .footer-column {
+                flex: auto;
+                padding: 10px;
+                text-align: center;
+            }
+        
+            .social-icons {
+                margin-top: 10px;
+                text-align: center;
+            }
+           
+        }
+        
+        .footer {
+            width: 100%;
+            background-color:#333;
+            color:whitesmoke;
+            padding: 20px 50px;
+            font-weight:400;
+        }
+    
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .footer-column {
+            flex: 1;
+        }
+    
+        .footer-column p {
+            margin: 1;
+            
+        }
+    
+        .social-icons {
+            font-size: 30px;
+        }
+    
+        .social-icons a {
+            color: #fff;
+            text-decoration:solid;
+            margin-right: 20px;
+        }
+</style>
+<body><br><br>  
+        <div class="navbar">
+            <img src="bioCOS-removebg-preview.png" alt="Logo">
+        <label for="toggler">
+            <i class="fa fa-bars"></i>
+        </label>
+    <input type="checkbox" id="toggler" name="">
+    <div class="menu">    
+        <div class="navbar-columns">
+            <a href="../bioCOS HOME/index.html" class="navbar-column">HOME</a>
+            <div class="dropdown"><strong><a href="../Insight_Analysis/main_analysis.html" style="text-decoration:none; color:black;" class="navbar-column" >ANALYSIS</a></strong>
+            <div class="dropdown-content">
+                <a href="../Insight_Analysis/d.html">DNA Analysis</a>
+                <a href="../Insight_Analysis/r.html">RNA Analysis</a>
+                <a href="../Insight_Analysis/scr.html">Single-Cell Analysis</a>
+                <a href="../Insight_Analysis/epig.html">Epigenomic Analysis</a>
+                <a href="../Insight_Analysis/p_m.html">Proteomic Analysis</a>
+            </div></div>
+
+            <div class="dropdown"><strong><a href="../R&D 2nd file/research.html" style="text-decoration:none; color:black;" class="navbar-column" >RESEARCH</a></strong>
+                <div class="dropdown-content">
+                    <a href="../R&D 2nd file/research_cancer1.html">CANCER</a>
+                    <a href="../R&D 2nd file/research_genetics1.html">GENETICS</a>
+                    <a href="../R&D 2nd file/research_nervous1.html">NERVOUS SYSTEM</a>
+                    <a href="../R&D 2nd file/research_microbiology1.html">MICROBIOLOGY</a>
+                    <a href="../R&D 2nd file/research_immunology1.html">IMMUNOLOGY</a>
+                    <a href="../R&D 2nd file/research_drug1.html">DRUG DEVELOPMENT</a>
+                </div></div>
+            <a href="../reference page/index_final.html" class="navbar-column">REFERENCES</a>
+            <a href="../aboutusnew/aboutus2.html" class="navbar-column">ABOUT US</a>
+        </div>
+    </div>
+    </div>
+    <br><br><br><br>
+    <header>
+        <h2>Scientific Research Center</h2>
+        <p style="color:#151320 ;">Your Source for Cutting-Edge Research</p>
+    </header>
+    
+    <div class="container">
+        <h2 style="color:black">Exploratory Gene Expression Analysis</h2>
+        <div class="image">
+            <img src="https://www.researchgate.net/publication/341422452/figure/fig2/AS:891638519980034@1589594597614/Summary-of-the-results-of-exploratory-RNA-seq-data-analysis-A-PCA-plot-of-gene.png" alt="Exploratory Gene Expression Analysis">
+        <p>Every RNA-Seq expression study incorporates an exploratory analysis. After the raw sequencing reads of an RNA-seq experiment have been quality controlled and gene counts derived, the data set is visualized using Principal Component Analysis (PCA) and expression heatmaps to unveil its general patterns. These visualizations help us answer questions such as:</p>
+    
+        <ul>
+            <li>Do the biological replicates resemble each other with regards to their expression profiles?</li>
+            <li>Do distinct sample groups (e.g., different tissues, treatments or time points) form separate clusters?</li>
+            <li>Are there outlier samples?</li>
+        </ul>
+        <br><br><br><hr></div>
+        <h2 style="color:black">Differential Expression Analysis</h2>
+        <div class="image">
+            <img src="https://www.ebi.ac.uk/training/online/courses/functional-genomics-ii-common-technologies-and-data-analysis-methods/wp-content/uploads/sites/70/2020/09/Fig11-updated-1024x887.png" alt="DIF">
+        <p>Differential expression analysis is a statistical comparison of two sample groups. It results in differential expression statistics for each detected transcript, such as the fold change and statistical significance. These statistics are typically visualized using a volcano plot. The genes which are found to be up- or down-regulated can be further visualized as heatmaps or boxplots, for instance.</p>
+    
+        <p>As a statistical analysis, this phase of an expression study benefits from the statistical power brought by biological replicates. Three biological replicates per condition is a common "rule-of-thumb" minimum, but it only allows for reliable detection of genes with relatively large expression differences. With a careful experimental design and sufficient sample size, subtler differences can be detected and confounding factors controlled for.</p>
+        <br><br><br><hr></div>
+        <h2 style="color: black;">Pathway Analysis</h2>
+        <div class="image">
+            <img src="https://www.frontiersin.org/files/Articles/476320/fonc-09-00910-HTML/image_m/fonc-09-00910-g001.jpg" alt="PA">
+        <p>Pathway analysis puts genes from a differential expression analysis into a broader biological context. Simple pathway analyses compare the up- and down-regulated genes statistically to predetermined gene lists. These lists are annotated to biologically meaningful terms, such as a biological process, signaling pathway or a specific disease.</p>
+    
+        <p>Such analyses may rely either on over-representation analysis or gene set enrichment analysis, which both result in a list of enriched gene sets with relevant statistics and annotations. More mechanistic pathway analyses rely on experimentally validated interactions between genes. They enable identifying not just which pathways are represented by the differentially expressed genes, but also shed light on whether the pathways are activated or inhibited, and by which genes. For the more advanced pathway analyses, we use Ingenuity Pathway Analysis (IPA, QIAGEN). IPA enables a wide range of in-depth analyses into known and novel gene regulatory networks.</p>
+        <br><br><br><hr></div>
+        <h2 style="color:black">MicroRNA Data Analysis</h2>
+        <div class="image">
+            <img src="https://pubs.acs.org/cms/10.1021/acscentsci.2c00748/asset/images/acscentsci.2c00748.social.jpeg_v03" alt="MicroRNA Data Analysis">
+        <p>Small RNA-sequencing enables studying various species of short RNAs, and microRNAs in particular. MicroRNA-seq analysis is largely similar to that of mRNAs, but pathway and regulatory analyses make use of predicted and/or previously validated microRNA target genes. Sequencing both mRNA and small RNA from the matched samples enables estimating the regulatory relationship between microRNAs and their targets. To identify genes subject to microRNA-mediated regulation in a given condition, argonaute CLIP-sequencing (and related protocols) can be employed.</p>
+        <br><br><br><br><hr></div>
+        <h2 style="color:black">Fusion Gene Detection</h2>
+        <div class="image">
+            <img src="https://www.paragongenomics.com/wp-content/uploads/2020/11/gene-fusion-inversion-translocation-700x484-cp.png" alt="Fusion Gene Detection">
+        <p>In cancer, certain structural variants are known to cause fusion genes. Two separate genes fused together in the DNA may lead to a fusion transcript. The fusion transcript, in turn, may lead to a fusion protein with a novel, potentially cancer-driving combination of regulation and function. Fusion genes can be detected from RNA-sequencing data with tools that identify and analyze discordantly mapping RNA-seq reads or read pairs.</p>
+    
+        <br><br><br><br><br><br><hr></div>
+    </div>
+    <div class="footer">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <p>BioCOS LIFE SCIENCES</p>
+                <p>Bengaluru Area, India</p>
+            </div>
+            <div class="footer-column social-icons">
+                <a href="https://www.researchgate.net/profile/Sanjeev-Kumar-215"><i class="fab fa-researchgate"></i></a>
+                <a href="https://www.linkedin.com/company/biocos-life-sciences/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.contractresearchmap.com/providers/biocos-life-sciences"><i class="fab fa-connectdevelop"></i></a>
+            </div>
+            <div class="footer-column">
+                <p>&copy; 2008 BioCOS LIFE SCIENCES</p>
+                <p>Contact Us: biocos@biocosls.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

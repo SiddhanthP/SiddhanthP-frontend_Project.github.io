@@ -1,0 +1,599 @@
+<html>
+<head>
+    <title>Epigenomic Data Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggler = document.getElementById('toggler');
+            const menu = document.querySelector('.menu');
+    
+            document.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is outside the menu
+                if (toggler.checked && !menu.contains(event.target) && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+    
+            // Add an additional click event listener for clicks inside the menu
+            menu.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is inside the menu
+                if (toggler.checked && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+        });
+    </script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+    .navbar {
+        position: fixed;
+        background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2013/12/shutterstock_112250879-double-helix-dna.jpg);
+        top: 0;
+        width: 100%;
+        background-color:whitesmoke;
+        padding: 15px 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-size: cover; 
+    }
+    .navbar a {
+        text-decoration: none;
+        color: black	;
+        }
+    
+    .navbar img{
+        float:left;
+        padding-left: 10px;
+        width:max-content;
+        height: 80px;
+    }
+    
+    .navbar-columns {
+        display: flex;
+        list-style: none;   
+        gap: 10px;
+       
+    }
+    
+    .navbar-column {
+        margin: 0 20px;
+        text-decoration: none;
+        color:black;
+        font-weight:bold;
+        transition: color 0.6s ease;
+        font-size:16px;
+    }
+    #toggler, label{
+        display: none;
+        }
+    
+        label i{
+        color:black;
+        align-items: right;
+        padding-right: 30px ;
+        }
+        @media screen and (max-width:864px)
+    {
+            .menu {
+            width: 100%;
+            max-height: 0;
+            height: 100vh; /* Set the height to the full height of the viewport */
+            overflow: hidden;
+            line-height: 40px;
+            background-color: rgba(173, 216, 230, 0.9); /* Set a transparent background color */
+            position: fixed;
+            top: 0;
+            left: 0;    
+            z-index: 999; /* Set a higher z-index to appear above other elements */
+            }
+            
+            .menu a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            color: black;
+            font-size: 16px;
+            transition: background-color 0.6s ease;
+            }
+            
+            .menu a:hover {
+            background-color: #999;
+            }
+            
+            #toggler:checked~.menu {
+            max-height: 100%;
+            }
+    
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ebf3f8;
+            min-width: max-content;
+            border-radius: 5px;
+            z-index: 1;
+            top: 0;
+            left: 100%; /* Position the dropdown content to the right of the dropdown button */
+            }
+    
+            .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #7a8775;
+            }
+            
+            label{
+            display: inline-flex;
+            cursor: pointer;
+            }
+    
+            #toggler:checked~.menu{
+            max-height: 100%;
+            }
+    
+            .navbar-columns{
+            flex-direction: column;
+            align-items:center;
+            padding:30px;
+            }
+    }
+    
+.navbar-column:hover {
+    color:orangered; 
+}
+    .navbar-column:hover {
+        color:orangered; 
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        border-radius: 5px;
+        cursor: pointer ;
+        position: relative;
+      }
+    
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:#ebf3f8; /* Same color as the button */
+        min-width: max-content;
+        text-decoration: none;
+        border-radius: 5px;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        font-size: 90%;
+        color: black;
+        height:50px;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #999;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: #7a8775;
+      }
+
+    .container {
+        color: #151320;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        
+        }
+        img {
+    max-width: 400px;
+    height:220px;
+    float: right;
+    display: block;
+    border-radius: 20px 20px 0 0;
+  }
+
+  p {
+            font-size: 12pt;
+        }
+        body {
+            background-color:white ;
+            font-family:'Poppins',sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        header {
+            background-color:white;
+            color:black;
+            padding: 20px;
+            text-align: center;
+        }
+        @media screen and (max-width: 768px) {
+            .footer-columns {
+                font-size: small;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        
+            .footer-column {
+                flex: auto;
+                padding: 10px;
+                text-align: center;
+            }
+        
+            .social-icons {
+                margin-top: 10px;
+                text-align: center;
+            }
+           
+        }
+        
+        .footer {
+            width: 100%;
+            background-color:#333;
+            color:whitesmoke;
+            padding: 20px 50px;
+            font-weight:400;
+        }
+    
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .footer-column {
+            flex: 1;
+        }
+    
+        .footer-column p {
+            margin: 1;
+            
+        }
+    
+        .social-icons {
+            font-size: 30px;
+        }
+    
+        .social-icons a {
+            color: #fff;
+            text-decoration:solid;
+            margin-right: 20px;
+        }
+</style>
+<body><br><br>  
+        <div class="navbar">
+            <img src="bioCOS-removebg-preview.png" alt="Logo">
+        <label for="toggler">
+            <i class="fa fa-bars"></i>
+        </label>
+    <input type="checkbox" id="toggler" name="">
+    <div class="menu">    
+        <div class="navbar-columns">
+            <a href="../bioCOS HOME/index.html" class="navbar-column">HOME</a>
+            <div class="dropdown"><strong><a href="../Insight_Analysis/main_analysis.html" style="text-decoration:none; color:black;" class="navbar-column" >ANALYSIS</a></strong>
+            <div class="dropdown-content">
+                <a href="../Insight_Analysis/d.html">DNA Analysis</a>
+                <a href="../Insight_Analysis/r.html">RNA Analysis</a>
+                <a href="../Insight_Analysis/scr.html">Single-Cell Analysis</a>
+                <a href="../Insight_Analysis/epig.html">Epigenomic Analysis</a>
+                <a href="../Insight_Analysis/p_m.html">Proteomic Analysis</a>
+            </div></div>
+
+            <div class="dropdown"><strong><a href="../R&D 2nd file/research.html" style="text-decoration:none; color:black;" class="navbar-column" >RESEARCH</a></strong>
+                <div class="dropdown-content">
+                    <a href="../R&D 2nd file/research_cancer1.html">CANCER</a>
+                    <a href="../R&D 2nd file/research_genetics1.html">GENETICS</a>
+                    <a href="../R&D 2nd file/research_nervous1.html">NERVOUS SYSTEM</a>
+                    <a href="../R&D 2nd file/research_microbiology1.html">MICROBIOLOGY</a>
+                    <a href="../R&D 2nd file/research_immunology1.html">IMMUNOLOGY</a>
+                    <a href="../R&D 2nd file/research_drug1.html">DRUG DEVELOPMENT</a>
+                </div></div>
+            <a href="../reference page/index_final.html" class="navbar-column">REFERENCES</a>
+            <a href="../aboutusnew/aboutus2.html" class="navbar-column">ABOUT US</a>
+        </div>
+    </div>
+    </div>
+<br><br><br>
+    <header>
+        <h2>Scientific Research Center</h2>
+        <p style="color:#151320 ;">Your Source for Cutting-Edge Research</p>
+    </header>
+    
+    <div class="container">
+        <h2 style="color:black">Epigenomic Assays</h2>
+        <div class="image">
+            <img src="https://www.frontiersin.org/files/Articles/714687/fcell-09-714687-HTML-r1/image_m/fcell-09-714687-g001.jpg" alt="Epigenomic Assays">
+    <p>High-throughput assays for epigenomic profiling are numerous, and new protocols are being developed continuously. The most common epigenomic assays focus on:</p>
+    <ul>
+        <li>DNA methylation</li>
+        <li>Transcription factor binding and histone modifications</li>
+        <li>Chromatin accessibility</li>
+        <li>Chromatin conformation</li>
+    </ul>
+
+    <p>To study the epigenome's direct effect on gene expression, epigenomic measurements are often complemented with RNA-sequencing experiments in the same setting. Single-cell experiments, particularly single-cell ATAC-sequencing, are increasingly performed as a co-assay with single-cell RNA-sequencing. This yields gene expression and chromatin accessibility profiles from the same individual cells.</p>
+    <br><hr></div>
+    <h2 style="color:black">Peak Calling and Annotation</h2>
+    <div class="image">
+        <img src="data:image/png;base64,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" alt="Peak Calling and Annotation">
+    <p>The analysis workflow for most sequencing-based epigenomic data involves identifying, annotating, and analyzing peaks, or genomic regions with a signal of interest. The raw sequencing reads are first quality-controlled and aligned to a reference genome. Possible control libraries are used to normalize the read coverage signal. Peaks in the signal are identified using a peak caller tool. To enable further analysis, peaks are annotated with relevant information such as read statistics and near or overlapping features.</p>
+    <br><br><br><br><br><hr></div>
+    <h2 style="color:black">Exploratory Analysis</h2>
+    <div class="image">
+        <img src="https://geneviatechnologies.com/site/assets/files/1277/screen_shot_2022-11-04_at_4_31_31_pm.png" alt="Exploratory Analysis">
+    <p>Annotated peaks across the sample set are visualized using PCA (and UMAP or t-SNE algorithms for single-cell data) and heatmaps. These visualizations help in optimizing the peak calling process and answer questions such as:</p>
+    <ul>
+        <li>Do the biological replicates resemble each other with regards to their epigenomic profiles?</li>
+        <li>Do distinct sample groups (e.g., different tissues, treatments, or time points) form separate clusters?</li>
+        <li>Are there outlier samples?</li>
+    </ul>
+<br><br><br><hr></div>
+    <h2 style="color:black">Differential Peak Analysis</h2>
+    <div class="image">
+        <img src="https://www.researchgate.net/publication/277602274/figure/fig3/AS:267583354044439@1440808251414/Analysis-of-DNA-methylation-peaks-reveals-differential-chromosomal-methylation-A-Cross.png" alt="Differential Peak Analysis">
+    <p>To compare different conditions, the identified peaks can be statistically compared, or differential peaks can be directly called from the respective read coverage signals. Similar to differential gene expression analysis, differential peak analysis yields estimates on the effect size and statistical significance. These statistics can be visualized as a volcano plot. Overlapping binding motifs at the peaks can be statistically compared between conditions and visualized as volcano plots.</p>
+    <br><br><br><br><br><br><hr></div>
+    <h2 style="color:black">Transcription Factor Binding Site Analyses</h2>
+    <div class="image">
+        <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnrg.2016.83/MediaObjects/41576_2016_Article_BFnrg201683_Fig1_HTML.jpg" alt="Transcription Factor Binding Site Analyses">
+    <p>ChIP-seq and related protocols can be used to identify transcription factor (TF) binding sites across the genome. TF footprinting, using ATAC-seq data, can be used to identify binding sites of all DNA-bound proteins in parallel, through an analysis called TF footprinting. TF footprinting can be used to study the combined effects of TFs on gene expression in a very high-throughput manner.</p>
+    <br><br><br><br><br><br><hr></div>
+    <h2 style="color:black">DNA Methylation Data Analysis</h2>
+    <div class="image">
+        <img src="https://www.frontiersin.org/files/Articles/714687/fcell-09-714687-HTML-r1/image_m/fcell-09-714687-g001.jpg" alt="DNA Methylation Data Analysis">
+    <p>The analysis of DNA methylation data starts with the quality control and alignment of sequencing reads, and proceeds to calling the methylated sites. Detected methylated sites are used to identify larger regions of DNA methylation or differentially methylated regions (DMRs) between samples. Possible downstream analyses for DNA methylation data include integration with gene expression data, epigenetic biomarker discovery, and biological age analysis.</p>
+    <br><br><br><br><br><hr></div>
+    <h2 style="color:black">Integrating RNA-seq and Epigenomic Data</h2>
+    <div class="image">
+        <img src="https://www.mdpi.com/cancers/cancers-11-01692/article_deploy/html/images/cancers-11-01692-g001.png" alt="Integrating RNA-seq and Epigenomic Data">
+    <p>Performing RNA-seq and epigenomic sequencing on the same samples enables integrative analyses to study gene regulatory programs genome-wide. Regulatory connections can be identified between enhancers and their target genes, as well as transcription factors and their targets, building on evidence from both gene expression and the epigenomic status of regulatory elements.</p>
+    <br><br><br><br><br><hr></div></div>
+    <div class="footer">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <p>BioCOS LIFE SCIENCES</p>
+                <p>Bengaluru Area, India</p>
+            </div>
+            <div class="footer-column social-icons">
+                <a href="https://www.researchgate.net/profile/Sanjeev-Kumar-215"><i class="fab fa-researchgate"></i></a>
+                <a href="https://www.linkedin.com/company/biocos-life-sciences/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.contractresearchmap.com/providers/biocos-life-sciences"><i class="fab fa-connectdevelop"></i></a>
+            </div>
+            <div class="footer-column">
+                <p>&copy; 2008 BioCOS LIFE SCIENCES</p>
+                <p>Contact Us: biocos@biocosls.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<html>
+    
+    <head>
+        <title>BIOCOS LIFE SCIENCES</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="shortcut icon" type="image/png" href="B_LOGO.png" >
+    </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggler = document.getElementById('toggler');
+            const menu = document.querySelector('.menu');
+    
+            document.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is outside the menu
+                if (toggler.checked && !menu.contains(event.target) && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+    
+            // Add an additional click event listener for clicks inside the menu
+            menu.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is inside the menu
+                if (toggler.checked && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+        });
+    </script>
+    
+<style>
+    
+    @media screen and (max-width: 700px) {
+        .header {
+            padding-top: 15px; /* Adjust the padding for the header */
+        }
+    
+        .navbar img {
+            height: 60px; /* Adjust the height of the logo */
+        }
+    
+        .navbar-columns {
+            padding: 15px; /* Adjust the padding for the navbar columns */
+        }
+    
+        .menu {
+            height: auto;
+            max-height: none;
+        }
+    
+        .navbar-column, .dropdown-content a {
+            font-size: 16px; /* Adjust the font size of navbar columns and dropdown content */
+        }
+    
+        .footer-columns {
+            font-size: small;
+
+            justify-content: center ;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .footer-column {
+            justify-content: center ;
+
+            flex: auto;
+            padding: 10px;
+            text-align: center;
+        }
+    
+        .social-icons {
+            justify-content: center ;
+
+            margin-top: 10px;
+            text-align: center;
+        }
+       
+    }
+    
+    
+    
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container{
+        width:100%;
+        margin:auto;
+}
+
+.header
+{
+    height : 100%;
+    background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2013/12/shutterstock_112250879-double-helix-dna.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 25px;
+}
+
+.navbar {
+    position: fixed;
+    background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2013/12/shutterstock_112250879-double-helix-dna.jpg);
+    top: 0;
+    width: 100%;
+    background-color:whitesmoke;
+    padding: 15px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover; 
+}
+.navbar a {
+    text-decoration: none;
+    color: black;
+    }
+
+.navbar img{
+    float:left;
+    padding-left: 10px;
+    width:max-content;
+    height: 80px;
+}
+
+.navbar-columns {
+    display: flex;
+    list-style: none;   
+    gap: 10px;
+   
+}
+
+.navbar-column {
+    margin: 0 20px;
+    text-decoration: none;
+    color:black;
+    font-weight:bold;    
+    font-size:14px;
+    transition: color 0.6s ease;
+    
+}
+#toggler, label{
+    display: none;
+    }
+    label i{
+    color:black;
+    align-items: right;
+    padding-right: 30px ;
+    }
+
+@media screen and (max-width:900px)
+{
+        .menu {
+        width: 100%;
+        max-height: 0;
+        height: 100vh; /* Set the height to the full height of the viewport */
+        overflow: hidden;
+        line-height: 40px;
+        background-color: rgba(173, 216, 230, 0.9); /* Set a transparent background color */
+        position: fixed;
+        top: 0;
+        left: 0;    
+        z-index: 999; /* Set a higher z-index to appear above other elements */
+        }
+        
+        .menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        color: black;
+        font-size: 16px;
+        transition: background-color 0.6s ease;
+        }
+        
+        .menu a:hover {
+        background-color: #999;
+        }
+        
+        #toggler:checked~.menu {
+        max-height: 100%;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ebf3f8;
+        min-width: max-content;
+        border-radius: 5px;
+        z-index: 1;
+        top: 0;
+        left: 100%; /* Position the dropdown content to the right of the dropdown button */
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: #7a8775;
+        }
+        
+        label{
+        display: inline-flex;
+        cursor: pointer;
+        }
+
+        #toggler:checked~.menu{
+        max-height: 100%;
+        }
+
+        .navbar-columns{
+        flex-direction: column;
+        align-items:center;
+        padding:30px;
+        }
+}
+
+.navbar-column:hover {
+    color:orangered; 
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer ;
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#ebf3f8; /* Same color as the button */
+    min-width: max-content;
+    
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    font-size: 90%;
+    color: black;
+    height:50px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #999;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #7a8775;
+  }
+</style>
+</head>
+
+<body>
+<section class="header">
+    <div class="navbar">
+              <img src="bioCOS-removebg-preview.png" alt="Logo">
+            <label for="toggler">
+                <i class="fa fa-bars"></i>
+            </label>
+        <input type="checkbox" id="toggler" name="">
+        <div class="menu">    
+            <div class="navbar-columns">
+                <a href="./index.html" class="navbar-column">HOME</a>
+                <div class="dropdown"><strong><a href="../Insight_Analysis/main_analysis.html" style="text-decoration:none; color:black;" class="navbar-column" >ANALYSIS</a></strong>
+                <div class="dropdown-content">
+                    <a href="../Insight_Analysis/d.html">DNA Analysis</a>
+                    <a href="../Insight_Analysis/r.html">RNA Analysis</a>
+                    <a href="../Insight_Analysis/scr.html">Single-Cell Analysis</a>
+                    <a href="../Insight_Analysis/epig.html">Epigenomic Analysis</a>
+                    <a href="../Insight_Analysis/p_m.html">Proteomic Analysis</a>
+                </div></div>
+
+                <div class="dropdown"><strong><a href="../R&D 2nd file/research.html" style="text-decoration:none; color:black;" class="navbar-column" >RESEARCH</a></strong>
+                    <div class="dropdown-content">
+                        <a href="../R&D 2nd file/research_cancer1.html">CANCER</a>
+                        <a href="../R&D 2nd file/research_genetics1.html">GENETICS</a>
+                        <a href="../R&D 2nd file/research_nervous1.html">NERVOUS SYSTEM</a>
+                        <a href="../R&D 2nd file/research_microbiology1.html">MICROBIOLOGY</a>
+                        <a href="../R&D 2nd file/research_immunology1.html">IMMUNOLOGY</a>
+                        <a href="../R&D 2nd file/research_drug1.html">DRUG DEVELOPMENT</a>
+                    </div></div>
+                <a href="../reference page/index_final.html" class="navbar-column">REFERENCES</a>
+                <a href="../aboutusnew/aboutus2.html" class="navbar-column">ABOUT US</a>
+            </div>
+        </div>
+    </div>
+        
+<br><br><br><br><br><br><br>
+        
+    <center>
+        <h3 style="font-weight: bold; color:cornsilk;">
+            DISCOVER SINGLE CELL RNA SEQUENCING <br> AND HIGH THROUGHPUT SPATIAL TRANSCRIPTOMICS
+        </h3>
+    <br><br><br>
+        <h5 style="font-weight: bold; color:cornsilk;">
+            Develop and facilitate/participate in the R&D areas of computational platforms and solutions relevant to diagnosis, <br>prognosis and therapy of various human diseases&#8482;
+        </h5> 
+    </center>
+    <br><br><br><br>
+
+</section></body>
+
+</html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .container1{
+            background-image: url('HOME2_BG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content1 {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #333;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+       .content1 p{
+            font-size: 18px;
+            color:black;
+            font: weight 500px;
+                }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</section>
+</head>
+<body>
+    <div class="container1">
+        <div class="content1">
+            <h1>WHAT WE DO?</h1>
+            <p>BioCOS Life Sciences private limited company registered under Ministry of Corporate Affairs (MCA) India and head office at Bangalore, India. From start itself BioCOS has been recognized for its R&D potential in the field of computational Life Sciences and could forge collaborations in various R&D areas of Life and Biomedical Sciences with prominent scientists and research institutions such as university Lyon France, ACTREC Mumbai, Indian Institute of Science (IISc) Bangalore, Jawaherlal Neharu Center for Advanced Scientific Research (JNCASR) Bangalore, National Institute of Immunology (NII) New Delhi to mention few. Company has R&D collaborations in India and outside the country in various research areas of prominent national and international importance such as Cancer, Malaria, Diabetes and Genomics.</p>
+            <p>BioCOS’s focus is to develop and facilitate/ participate in the R&D areas of computational platforms and solutions relevant to diagnosis, prognosis and therapy of various human diseases such as Diabetes, Malaria and Cancer.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color:azure;
+            text-align: center;
+        }
+
+        .container2 {
+            max-width:100%;
+            max-height: auto;
+            margin:auto;
+            padding: 20px;
+            background-image : linear-gradient(rgba(0.1,0,0,0.1), rgba(0,0,0,0.1));
+        }
+
+        h1 {
+            font-size: 24px;
+            color:dimgray;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .flex-box {
+            height:fit-content;
+            flex: 2;
+            background-color:honeydew;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.6s ease;
+            margin:10px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;          
+        }
+
+        .flex-box:hover {
+            background-color:lightgoldenrodyellow;
+        }
+
+        .hidden-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color:black ;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        
+        }
+
+        .flex-box:hover .hidden-text {
+            opacity: 1;
+        }
+
+        p {
+            margin-top: 20px; 
+            text-align: justify;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* FROM HERE BUTTON STYLING STARTS */
+
+        .button {
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+          }
+
+          .button {
+            background-color:whitesmoke; 
+            color: black; 
+            border: 2px solid #008CBA;
+          }
+          
+          .button:hover {
+            background-color: #008CBA;
+            color:whitesmoke;
+          }
+
+    </style>
+</head>
+<body>
+    <div class="container2">
+        <h1><u><b>RESEARCH</b></u></h1>
+        <div class="flex-container">
+            <div class="flex-box">
+                    CANCER
+                        <a href="../R&D 2nd file/research_cancer1.html" style="text-decoration:none;">
+                        <p>Cancer can start anywhere in the human body,which is made up of trillions of cells.Normally human cells grow and multiply to form new cells as the body needs them.</p></a>
+            </div>
+            <div class="flex-box">
+                GENETICS
+                    <a href="../R&D 2nd file/research_genetics1.html" style="text-decoration:none;"><p>Genetics is the scientific study of genes and heredity of how certain qualities or traits are passed from parents to offspring as a result of changes in DNA sequence. </p></a>
+            </div>
+            <div class="flex-box">
+                NERVOUS SYSTEM
+                    <a href="../R&D 2nd file/research_nervous1.html" style="text-decoration:none;"><p>The nervous system includes the brain, spinal cord, and a complex network of nerves. This system sends messages back and forth between the brain and the body.</p></a>
+            </div>
+            <div class="flex-box">
+                IMMUNOLOGY
+                <a href="../R&D 2nd file/research_immunology1.html" style="text-decoration:none;"><p>Immunology is the study of the immune system and is a very important branch of the medical and biological sciences.This system protects us from infection.</p></a>
+            </div>
+            <div class="flex-box">
+                DRUG DEVELOPMENT
+                    <a href="../R&D 2nd file/research_drug1.html" style="text-decoration:none;"><p>Drug development is the process of bringing a new pharmaceutical drug to the market once a compound has been identified through the process of drug discovery.</p></a>
+            </div>
+        </div>
+        <br><a href="../R&D 2nd file/research.html"><button class="button button" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">VIEW MORE</button></pre></a>
+    </div>
+   
+</body>
+
+<head>
+    <style>
+        .video-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow videos to wrap to the next line on smaller screens */
+            margin: 20px;
+            padding: 5px;
+            gap: 30px;
+        }
+    
+        .video {
+            width: 48%;
+            border: 1px solid #ccc;
+           
+        }
+    
+        .video-info {
+            padding: 10px;
+        }
+    
+        @media screen and (max-width: 900px) {
+            .video {
+                width: 100%; /* Set the width to 100% for screens with a width of 600 pixels or less */
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="video-container">
+        <div class="video">
+            <h2>DNA SEQUENCING DATA ANALYSIS</h2>
+            <iframe width="100%" height="315" src="../IHC_biocos.mp4" frameborder="0" allowfullscreen></iframe>
+            <div class="video-info">
+                <p>In this fascinating video, An expert guide to DNA sequencing data analysis, including tools used for reading raw data, trimming reads and quality control.</p>
+            </div>
+        </div>
+        
+        <div class="video">
+            <h2>RNA SEQUENCING DATA ANALYSIS</h2>
+            <iframe width="100%" height="315" src="URL_TO_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-info">
+                <p>RNA sequencing data analysis has been widely used in biomedical and biological research to identify genes associated with certain conditions or diseases.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<style>
+
+    .footer {
+        max-height:fit-content;
+        max-width: 100%;
+        background-color:#333;
+        color:whitesmoke;
+        font-weight:400;
+        font-size:small;
+    }   
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .footer-column {
+        flex: 2 ;
+        padding: 10px;
+    }
+
+    .footer-column p {
+        flex-wrap:wrap ;
+        color:white;
+        margin: 4;
+    }
+
+    .social-icons {
+        font-size: 30px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        text-decoration:solid;
+        margin-right: 20px;
+    }
+</style>
+
+<div class="footer">
+    <div class="footer-columns">
+        <div class="footer-column">
+            <p>BioCOS LIFE SCIENCES</p>
+            <p>Bengaluru Area, India</p>
+        </div>
+        <div class="footer-column social-icons">
+            <a href="https://www.researchgate.net/profile/Sanjeev-Kumar-215"><i class="fab fa-researchgate"></i></a>
+            <a href="https://www.linkedin.com/company/biocos-life-sciences/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.contractresearchmap.com/providers/biocos-life-sciences"><i class="fab fa-connectdevelop"></i></a>
+        </div>
+        <div class="footer-column">
+                <p>&copy; 2008 BioCOS LIFE SCIENCES</p>
+            <p>Contact Us:biocos@biocosls.com</p>
+        </div>
+    </div>
+</div>
+
+</html>

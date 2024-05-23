@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REFERENCES</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">    
+</head>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggler = document.getElementById('toggler');
+            const menu = document.querySelector('.menu');
+    
+            document.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is outside the menu
+                if (toggler.checked && !menu.contains(event.target) && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+    
+            // Add an additional click event listener for clicks inside the menu
+            menu.addEventListener('click', function (event) {
+                // Check if the toggler is checked and the click is inside the menu
+                if (toggler.checked && event.target !== toggler) {
+                    toggler.checked = false; // Uncheck the toggler to close the menu
+                }
+            });
+        });
+    </script>
+    <style>        
+     
+        
+            .navbar img {
+                height: 60px; /* Adjust the height of the logo */
+            }
+        
+            .navbar-columns {
+                padding: 15px; /* Adjust the padding for the navbar columns */
+            }
+        
+            .menu {
+                height: auto;
+                max-height: none;
+            }
+        
+            .navbar-column, .dropdown-content a {
+                font-size: 16px; /* Adjust the font size of navbar columns and dropdown content */
+            }
+        
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+            *,
+            *:before,
+            *:after {
+              -moz-box-sizing: border-box;
+              -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+            }
+            
+            body {
+              margin: 0;
+            }
+            
+            .wk-desk-1 {
+              width: 8.333333%;
+            }
+            
+            .wk-desk-2 {
+              width: 16.666667%;
+            }
+            
+            .wk-desk-3 {
+              width: 25%;
+            }
+            
+            .wk-desk-4 {
+              width: 33.333333%;
+            }
+            
+            .wk-desk-5 {
+              width: 41.666667%;
+            }
+            
+            .wk-desk-6 {
+              width: 50%;
+            }
+            
+            .wk-desk-7 {
+              width: 58.333333%;
+            }
+            
+            .wk-desk-8 {
+              width: 66.666667%;
+            }
+            
+            .wk-desk-9 {
+              width: 75%;
+            }
+            
+            .wk-desk-10 {
+              width: 83.333333%;
+            }
+            
+            .wk-desk-11 {
+              width: 91.666667%;
+            }
+            
+            .wk-desk-12 {
+              width: 100%;
+            }
+            
+            @media (max-width: 1024px) {
+              .wk-ipadp-1 {
+                width: 8.333333%;
+              }
+            
+              .wk-ipadp-2 {
+                width: 16.666667%;
+              }
+            
+              .wk-ipadp-3 {
+                width: 25%;
+              }
+            
+              .wk-ipadp-4 {
+                width: 33.333333%;
+              }
+            
+              .wk-ipadp-5 {
+                width: 41.666667%;
+              }
+            
+              .wk-ipadp-6 {
+                width: 50%;
+              }
+            
+              .wk-ipadp-7 {
+                width: 58.333333%;
+              }
+            
+              .wk-ipadp-8 {
+                width: 66.666667%;
+              }
+            
+              .wk-ipadp-9 {
+                width: 75%;
+              }
+            
+              .wk-ipadp-10 {
+                width: 83.333333%;
+              }
+            
+              .wk-ipadp-11 {
+                width: 91.666667%;
+              }
+            
+              .wk-ipadp-12 {
+                width: 100%;
+              }
+            }
+            
+            @media (max-width: 768px) {
+              .wk-tab-1 {
+                width: 8.333333%;
+              }
+            
+              .wk-tab-2 {
+                width: 16.666667%;
+              }
+            
+              .wk-tab-3 {
+                width: 25%;
+              }
+            
+              .wk-tab-4 {
+                width: 33.333333%;
+              }
+            
+              .wk-tab-5 {
+                width: 41.666667%;
+              }
+            
+              .wk-tab-6 {
+                width: 50%;
+              }
+            
+              .wk-tab-7 {
+                width: 58.333333%;
+              }
+            
+              .wk-tab-8 {
+                width: 66.666667%;
+              }
+            
+              .wk-tab-9 {
+                width: 75%;
+              }
+            
+              .wk-tab-10 {
+                width: 83.333333%;
+              }
+            
+              .wk-tab-11 {
+                width: 91.666667%;
+              }
+            
+              .wk-tab-12 {
+                width: 100%;
+              }
+            }
+            
+            @media (max-width: 500px) {
+              .wk-mobile-1 {
+                width: 8.333333%;
+              }
+            
+              .wk-mobile-2 {
+                width: 16.666667%;
+              }
+            
+              .wk-mobile-3 {
+                width: 25%;
+              }
+            
+              .wk-mobile-4 {
+                width: 33.333333%;
+              }
+            
+              .wk-mobile-5 {
+                width: 41.666667%;
+              }
+            
+              .wk-mobile-6 {
+                width: 50%;
+              }
+            
+              .wk-mobile-7 {
+                width: 58.333333%;
+              }
+            
+              .wk-mobile-8 {
+                width: 66.666667%;
+              }
+            
+              .wk-mobile-9 {
+                width: 75%;
+              }
+            
+              .wk-mobile-10 {
+                width: 83.333333%;
+              }
+            
+              .wk-mobile-11 {
+                width: 91.666667%;
+              }
+            
+              .wk-mobile-12 {
+                width: 100%;
+              }
+            }
+*{
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+}
+    
+    .navbar {
+        position: fixed;
+        margin: auto;
+        background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2013/12/shutterstock_112250879-double-helix-dna.jpg);
+        top: 0;
+        width: 100%;
+        background-color:whitesmoke;
+        padding: 15px 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-size: cover; 
+    }
+    .navbar a {
+        text-decoration: none;
+        color: black	;
+        }
+    
+    .navbar img{
+        float:left;
+        padding-left: 10px;
+        width:max-content;
+        height: 80px;
+    }
+    
+    .navbar-columns {
+        display: flex;
+        list-style: none;   
+        gap: 10px;
+       
+    }
+    
+    .navbar-column {
+        margin: 0 20px;
+        text-decoration: none;
+        color:black;
+        font-weight:bold;
+        transition: color 0.6s ease;
+        font-size:14px;
+    }
+    #toggler, label{
+        display: none;
+        }
+        label i{
+        color:black;
+        align-items: right;
+        padding-right: 30px ;
+        }
+
+        @media screen and (max-width:900px)
+        {
+        .menu {
+        width: 100%;
+        max-height: 0;
+        height: 100vh; /* Set the height to the full height of the viewport */
+        overflow: hidden;
+        line-height: 40px;
+        background-color: rgba(173, 216, 230, 0.9); /* Set a transparent background color */
+        position: fixed;
+        top: 0;
+        left: 0;    
+        z-index: 999; /* Set a higher z-index to appear above other elements */
+        }
+        
+        .menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        color: black;
+        font-size: 16px;
+        transition: background-color 0.6s ease;
+        }
+        
+        .menu a:hover {
+        background-color: #999;
+        }
+        
+        #toggler:checked~.menu {
+        max-height: 100%;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ebf3f8;
+        min-width: max-content;
+        border-radius: 5px;
+        z-index: 1;
+        top: 0;
+        left: 100%; /* Position the dropdown content to the right of the dropdown button */
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: #7a8775;
+        }
+        
+        label{
+        display: inline-flex;
+        cursor: pointer;
+        }
+
+        #toggler:checked~.menu{
+        max-height: 100%;
+        }
+
+        .navbar-columns{
+        flex-direction: column;
+        align-items:center;
+        padding:30px;
+        }
+}
+
+    .navbar-column:hover {
+        color:orangered; 
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        border-radius: 5px;
+        cursor: pointer ;
+        position: relative;
+      }
+    
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:#ebf3f8; /* Same color as the button */
+        min-width: max-content;
+        
+        border-radius: 5px;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        font-size: 90%;
+        color: black;
+        height:50px;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #999;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: #7a8775;
+      }
+    </style>
+<body>
+    <div class="navbar">
+        <img src="bioCOS-removebg-preview.png" alt="Logo">
+      <label for="toggler">
+          <i class="fa fa-bars"></i>
+      </label>
+  <input type="checkbox" id="toggler" name="">
+  <div class="menu">    
+      <div class="navbar-columns">
+          <a href="../bioCOS HOME/index.html" class="navbar-column">HOME</a>
+          <div class="dropdown"><strong><a href="../Insight_Analysis/main_analysis.html" style="text-decoration:none; color:black;" class="navbar-column" >ANALYSIS</a></strong>
+          <div class="dropdown-content">
+              <a href="../Insight_Analysis/d.html">DNA Analysis</a>
+              <a href="../Insight_Analysis/r.html">RNA Analysis</a>
+              <a href="../Insight_Analysis/scr.html">Single-Cell Analysis</a>
+              <a href="../Insight_Analysis/epig.html">Epigenomic Analysis</a>
+              <a href="../Insight_Analysis/p_m.html">Proteomic Analysis</a>
+          </div></div>
+
+          <div class="dropdown"><strong><a href="../R&D 2nd file/research.html" style="text-decoration:none; color:black;" class="navbar-column" >RESEARCH</a></strong>
+              <div class="dropdown-content">
+                  <a href="../R&D 2nd file/research_cancer1.html">CANCER</a>
+                  <a href="../R&D 2nd file/research_genetics1.html">GENETICS</a>
+                  <a href="../R&D 2nd file/research_nervous1.html">NERVOUS SYSTEM</a>
+                  <a href="../R&D 2nd file/research_microbiology1.html">MICROBIOLOGY</a>
+                  <a href="../R&D 2nd file/research_immunology1.html">IMMUNOLOGY</a>
+                  <a href="../R&D 2nd file/research_drug1.html">DRUG DEVELOPMENT</a>
+              </div></div>
+          <a href="../reference page/index_final.html" class="navbar-column">REFERENCES</a>
+          <a href="../aboutusnew/aboutus2.html" class="navbar-column">ABOUT US</a>
+      </div>
+  </div>
+</div>
+<br><br><br>
+<div class="container1">
+    <div class="content1">
+        <div class="container">
+            <center>
+                <h2>OUR REFERENCES</h2>
+                <i><p>Take a look at what we have done so far and what our customers say about us.
+                </p></i></center>         
+            OUR NEW CUSTOMERS come to us primarily through referrals from previous
+            ones. This means that customer satisfaction is our first priority. 
+            Based on our experience, making a customer happy — not to mention
+            exceeding their expectations — requires not only scientifically sound
+            analysis and a rapid turnaround, but clear, honest and frequent
+            communication.<br><br>
+            We prefer to work in close relationship with our customers' teams. We
+            want to understand the research context in order to be able to fulfill
+            our customers' needs, and discuss the outcome of the project in order to
+            make sure that they benefit from it.
+            We are proud of our customers and the findings we have achieved
+            together. Scroll down to read more about our success stories — perhaps
+            we will create the next one with you!
+        
+        </div>
+    </div>
+</div>
+<br><br><br>
+<!--COLABRATION SECTION -->
+<center>
+<h2>COLLABORATION</h2><br>
+<i><p>We engage in collaborations with various academic and commercial partners as part of ongoing research consortia and training networks.</p></i>
+</center>
+
+<hr color="lavenderblush" size="5">
+<div class="logos">
+  <div class="logos-slide">
+    <img src="colabration img/actrec.png"/>
+    <img src="colabration img/iisce.png"/>
+    <img src="colabration img/dbf4a3_8c90040ce68a4c4c9ffa1e1c3e489f56~mv2.gif"/>
+    <img src="colabration img/nii-1517813960.jpg"/>
+    <img src="colabration img/Lyon_university_logo.png"/>
+  </div>
+  <div class="logos-slide">
+    <img src="colabration img/actrec.png"/>
+    <img src="colabration img/iisce.png"/>
+    <img src="colabration img/dbf4a3_8c90040ce68a4c4c9ffa1e1c3e489f56~mv2.gif"/>
+    <img src="colabration img/nii-1517813960.jpg"/>
+    <img src="colabration img/Lyon_university_logo.png"/>
+  </div>
+</div>
+<hr color="lavenderblush" size="5"><br><br>
+
+
+<!--CASE STUDY SECTION -->
+<header><center>
+    <h2>CASE STUDY</h2><br>
+    <i><p>Our clientele spans diverse fields, yet they all have a common requirement
+         for computational solutions <BR>to boost their research and publication productivity. 
+        Explore the icons to discover how we've supported our customers.</p></i></center>
+</header>
+<div class="cards">
+    <div class="card card1">
+        <div class="container3">
+            <img src="./case study img/dna.png" alt="DNA Sequencing Data Analysis">
+        </div>
+        <div class="details">
+            <h3>DNA METHYLATION TO STUDY THE EFFECTS OF ASSISTED
+                REPRODUCTIVE TECHNOLOGIES IN COWS</h3>
+            <p>Principal scientist Jaana Peippo and Senior Scientist Heli
+                Lindeberg from the Natural Resources Institute Finland (Luke)
+                study assisted reproductive technologies in animals.
+                Together, they worked on Luke’s Terve Tiineys (Healthy Pregnancy)
+                -project to compare pregnancies in heifers and cows impregnated
+                either by
+                artificial insemination (control group), by MOET (multiple ovulation
+                embryo transfer) or OPU (ovum pick up) embryos, and to study whether
+                closer
+                monitoring during pregnancy could enhance the wellbeing of the
+                pregnant cows and their offspring</p>
+                <a href="./case1.html"><button>READ MORE</a></button>
+        </div>
+    </div>
+    
+    <div class="card card2">
+        <div class="container3">
+            <img src="./case study img/tf_cut_and_run_neuronal_development.2302x0-is.png" alt="RNA Sequencing Data Analysis"> 
+        </div>
+        <div class="details">
+            <h3>TRANSCRIPTION FACTORS IN NEURONAL DEVELOPMENT WITH
+                CUT&RUN</h3>
+            <p>Dr. Christoph Wiegreffe is a senior scientist in the Department of
+                Molecular and Cellular Anatomy at Ulm University.
+                He studies early cortical development, and the role that certain
+                transcription factors (TFs) play in it.
+                In this research, Dr. Wiegreffe’s group routinely uses knock-out
+                mouse models and various NGS assays.</p>
+                <a href="./case1.html"><button>READ MORE</a></button>
+
+        </div>
+    </div>
+    
+    <div class="card card3">
+        <div class="container3">
+            <img src="./case study img/multiplex_if_panels.png" alt="Single-Cell RNA Sequencing Data Analysis">
+        </div>
+        <div class="details">
+            <h3>CANCER PATHOLOGY REVEALED WITH THE AID OF STATISTICS</h3>
+            <p>Dr. Artur Mezheyeuski is a pathologist at Uppsala University, a
+                founder of HistoOne AB, and a senior researcher involved in several
+                cancer research groups.
+                Genevia Technologies helped Dr. Mezheyeuski in coming up with a new
+                approach to applying thresholding in multiplex immunofluorescence
+                data.</p>
+                <a href="./case1.html"><button>READ MORE</a></button>
+
+        </div>
+    </div>
+    
+    <div class="card card4">
+        <div class="container3">
+            <img src="./case study img/glypicans_in_cancer2.1598x0-is.png" alt="Epigenomic Data Analysis">
+        </div>
+        <div class="details">
+            <h3>INVESTIGATING THE ROLE OF GLYPICANS IN CANCER</h3>
+            <p>Glypicans are a group of proteoglycans, macromolecules consisting
+                of a core protein and attached carbohydrate chains.
+                We interviewed our customer who studies glypicans’ involvement in
+                cancer and neurodegenerative disease, and their potential as
+                diagnostic or prognostic markers.
+                The Genevia team is helping her to take advantage of cancer
+                databases in her research.</p>
+                <a href="./case1.html"><button>READ MORE</a></button>
+
+        </div>
+    </div>
+    
+    <div class="card card5">
+        <div class="container3">
+            <img src="./case study img/nCoV_genome_bis.png" alt="Proteomic & Metabolomic Data Analysis">
+        </div>
+        <div class="details">
+            <h3>Genome Analysis of SARS-CoV-2</h3>
+            <p>A SARSCoV2/COVID19 case study has been developed that allows students to align the genomes of 4 different coronaviruses 
+                to identify potential origins of the virus. It helped to think critically about how an RNA viral genome may have different implications than a DNA viral genome, or why mutations in the surface glycoprotein may have big impacts on viral transmission and immunity.  </p>
+            <a href="./case1.html"><button>READ MORE</a></button>
+            
+        </div>
+    </div>
+    
+    <div class="card card6">
+        <div class="container3">
+            <img src="./case study img/rna-related-vector-icon-sign-260nw-2343543265.webp" alt="Proteomic & Metabolomic Data Analysis">
+        </div>
+        <div class="details">
+            <h3>PREDICTIVE ANALYTICS FOR CANCER
+                </h3>
+            <p>Proteins and metabolites are typically identified and quantified by the means of mass-spectrometry. Other methods, relying on antibodies or nuclear magnetic resonance provide lower-throughput or less quantitative data, often with lower costs compared to MS. </p>
+            <a href="./case1.html"><button>READ MORE</a></button>
+        </div>
+    </div>
+            
+</div><br><hr color="lavenderblush" size="5"><br><br>
+
+
+<!--TESTIMONIAL SECTION -->
+<div class="container2">
+	<div class="row">
+		<div class="col-md-8 col-center m-auto">
+			<h2>Testimonials</h2>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Carousel -->
+				<div class="carousel-inner">
+					<div class="item carousel-item active">
+						<div class="img-box"><img src="https://i.ibb.co/d5DY64w/img1.jpg" alt=""></div>
+						<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+						<p class="overview"><b>Jennifer Smith</b>, Office Worker</p>
+					</div>
+					<div class="item carousel-item">
+						<div class="img-box"><img src="https://i.ibb.co/5FF1vqz/img2.jpg" alt=""></div>
+						<p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+						<p class="overview"><b>Dauglas McNun</b>, Financial Advisor</p>
+					</div>
+					<div class="item carousel-item">
+						<div class="img-box"><img src="https://i.ibb.co/Trv7hDv/img3.jpg" alt=""></div>
+						<p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+						<p class="overview"><b>Hellen Wright</b>, Athelete</p>
+					</div>
+				</div>
+				<!-- Carousel Controls -->
+				<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div><br>
+<hr color="lavenderblush" size="5"><br>
+<header>
+    <center><h2>SCIENTIFIC REFERENCES</h2><br></center>
+
+    <div class="view_main"> 
+            <div class="view_wrap list-view" style="display: block;">
+                <div class="view_item">
+                    <div class="vi_left">
+                        <img src="publication.jpg " alt="publication">
+                    </div>
+                    <div class="vi_right">
+                        <p class="title">ΔNp63 overexpression promotes oral cancer cell
+                            migration through hyperactivated Activin A signaling</p>
+                        <p class="content"></p>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0014482723002872"><button> VIEW MORE </a></button>
+        
+                    </div>
+                </div>
+                <div class="view_item">
+                    <div class="vi_left">
+                        <img src="publication.jpg " alt="publication">
+                    </div>
+                    <div class="vi_right">
+                        <p class="title">Linker histone variant H1t is closely associated with repressed repeat-element
+                            chromatin domains in pachytene spermatocytes targets for matastasis</p>
+                        <p class="content"></p>
+                        <a href="https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-020-00335-x"><button> VIEW MORE</a></button>
+                    </div>
+                </div>
+                <div class="view_item">
+                    <div class="vi_left">
+                        <img src="./publication.jpg " alt="publication">
+                    </div>
+                    <div class="vi_right">
+                        <p class="title">Interactions of Plasmodium falciparum ETRAMP14.1 with PfEMP1, translocon components
+                            and other ETRAMP members at the interface of host-parasite</p>
+                        <p class="content"></p>
+                        <a href="https://www.biorxiv.org/content/10.1101/775650v1"><button> VIEW MORE</a></button>
+                    </div>
+                </div>
+                <div class="view_item">
+                    <div class="vi_left">
+                        <img src="./publication.jpg " alt="publications">
+                    </div>
+                    <div class="vi_right">
+                        <p class="title">The cancer-associated, gain-of-function TP53 variant P152Lp53 activates multiple signaling pathways implicated in tumorigenesis</p>
+                        <p class="content"></p>
+                        <a href="https://www.jbc.org/article/S0021-9258(20)32092-5/fulltext#relatedArticles"><button> VIEW MORE</a></button>
+        
+                    </div>
+                </div>
+                <div class="view_item">
+                    <div class="vi_left">
+                        <img src="./publication.jpg " alt="publications">
+                    </div>
+                    <div class="vi_right">
+                        <p class="title">Activation of Multiple Signalling Pathways by P152Lp53 Mutant Reveals New Gain-of-function Implicating Tumorigenesis
+                        </p>
+                        <p class="content"></p>
+                        <a href="https://www.biorxiv.org/content/10.1101/475293v1?rss=1"><button> VIEW MORE</a></button>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+<style>
+
+    .footer {
+        width: 100%;
+        background-color:#333;
+        color:whitesmoke;
+        padding: 20px 50px;
+        font-weight:400;
+                font-size:small;
+    }
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-column {
+        flex: 1;
+    }
+
+    .footer-column p {
+        margin: 1;
+        
+    }
+
+    .social-icons {
+        font-size: 30px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        text-decoration:solid;
+        margin-right: 20px;
+    }
+</style>
+
+<div class="footer">
+    <div class="footer-columns">
+        <div class="footer-column">
+            <p>BioCOS LIFE SCIENCES</p>
+            <p>Bengaluru Area, India</p>
+        </div>
+        <div class="footer-column social-icons">
+            <a href="https://www.researchgate.net/profile/Sanjeev-Kumar-215"><i class="fab fa-researchgate"></i></a>
+            <a href="https://www.linkedin.com/company/biocos-life-sciences/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.contractresearchmap.com/providers/biocos-life-sciences"><i class="fab fa-connectdevelop"></i></a>
+        </div>
+        <div class="footer-column">
+            <p>&copy; 2008 BioCOS LIFE SCIENCES</p>
+            <p>Contact Us: biocos@biocosls.com</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>                                		
