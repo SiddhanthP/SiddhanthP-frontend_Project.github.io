@@ -1,3 +1,1 @@
-Our project involved the frontend development of a company's website using HTML, CSS, and JavaScript. The objective was to create a responsive, user-friendly, and visually appealing website that effectively represents the company's brand and services.The project successfully delivered a professional and functional website that meets the company’s requirements. Our collaborative effort and expertise in HTML, CSS, and JavaScript resulted in a high-quality product that enhances the company’s online presence and user engagement.
-click below for looking into out work
-https://siddhanthp.github.io/SiddhanthP-frontend_Project.github.io/bioCOS%20HOME/index.html
+
